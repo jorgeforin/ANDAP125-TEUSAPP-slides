@@ -1,0 +1,85 @@
+page-welcome {
+    #welcome{
+        background: color($colors, light);
+        h1{
+            font-size: 25px;
+            margin-top:0px
+        }
+
+        sliderion {
+            text-shadow: 1px 1px 3px #000000;
+font-size: 17px;
+padding: 0% 10% 10% 10%;
+margin: 0px;
+font-weight: 300;
+
+        }
+
+        sliderion2 {
+            text-shadow: 1px 1px 3px #000000;
+font-size: 17px;
+list-style: none !important;
+
+
+margin-right: 10px;
+
+
+        }
+
+
+        sliderion2 ul{
+            text-shadow: 1px 1px 3px #000000;
+            text-align: left !important;
+
+list-style: none !important;
+padding: 0% 0% 10% 10%;
+
+
+        }
+
+
+
+        .marginTop{
+            margin-top:10px;
+        }
+        .logo{
+            height:70px;
+        }
+        .card-title {
+            position: absolute;
+            top: 10%;
+            font-size: 2.0em;
+            width: 100%;
+            font-weight: bold;
+            color: rgb(230, 160, 9);
+          }
+          .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: rgb(66, 3, 3);
+          }  
+          ion-card {
+            position: relative;
+            text-align: center;
+          } 
+    }
+
+
+    .swiper-pagination-bullet-active {
+        background: #4caf5d;
+        opacity: 1;
+    }
+    
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 15px;
+        padding: 10px;
+    }
+
+
+
+
+
+    
+}

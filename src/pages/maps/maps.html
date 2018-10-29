@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Mi mapa</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <!--<div id="floating-panel">
+    <b>Inicio: </b>
+      <select [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()">
+        <option value="Parque Nacional, calle 36 bogota co">Parque Nacional</option>
+        <option value="Madelena bogota, co">Madelena</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+      </select><br>
+    <b>Fin: </b>
+      <select [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()">
+        <option value="Parque Nacional, calle 36 bogota co">Parque Nacional</option>
+        <option value="Madelena bogota, co">Madelena</option>
+        <option value="joplin, mo">Joplin, MO</option>
+        <option value="oklahoma city, ok">Oklahoma City</option>
+      </select>
+  </div>-->
+  <div class="action-buttons">
+      <button ion-button icon-only (click)="LoadBikeRoutes()">
+        <ion-icon name="bicycle"></ion-icon>
+      </button>
+  </div>
+  <div id="map_canvas"> </div>
+  <ion-scroll scrollY="true" class="scroll">
+    <div padding-horizontal id="panel"></div>
+    <button ion-button icon-only (click)="calculateRoute()">
+      <ion-icon name="start"></ion-icon>
+    </button>
+  </ion-scroll>
+</ion-content>

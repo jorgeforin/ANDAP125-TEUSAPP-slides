@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title> Normas </ion-title>
+</ion-navbar>
+</ion-header>
+  
+<ion-content padding>
+        <ion-item text-center>
+                <ion-img class="logo-img" width="150" height="179" src="assets/imgs/logo-teusapp.png" ></ion-img>
+              </ion-item>
+    <ion-list *ngFor="let v of videos">
+      <iframe *ngIf="loaded == false;else elseBlock" (load)="onLoad" width="100%" height="250" [src]="v.id.videoId | youtube" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <ng-template #elseBlock>
+         <ion-spinner name="circles"  align-center></ion-spinner>
+        </ng-template>  
+    </ion-list>
+  
+  
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>       
+</ion-content> 

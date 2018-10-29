@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="secondary">
+      <ion-buttons start>
+          <button ion-button icon-only>
+            <ion-icon name="contact"></ion-icon>
+          </button>
+        </ion-buttons>
+    <ion-title>
+      Contactenos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+
+        <ion-item>
+          <ion-label stacked>Nombres completos</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label stacked>Correo Electronico</ion-label>
+          <ion-input type="email"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+
+  <ion-list>
+    <ion-list-header>Quiero obtener información de:</ion-list-header>
+    <ion-item>
+      <ion-label>Noticias</ion-label>
+      <ion-checkbox [(ngModel)]="Noticias"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Actualizar Apps</ion-label>
+      <ion-checkbox [(ngModel)]="Apps"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Reportes de incidentes</ion-label>
+      <ion-checkbox [(ngModel)]="Reportes"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label>Información general</ion-label>
+      <ion-checkbox [(ngModel)]="Informacion"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button icon-left color="botones">
+      <ion-icon name="create"></ion-icon>
+      Enviar
+    </button>
+</ion-content>

@@ -34,13 +34,16 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #7CB520,
+  secondary:  #3CA84F,
   danger:     #f53d3d,
   light:      #f4f4f4,
+  lightprimary:    #B5B5B7,
+  energy:     #EB7C2E,
   dark:       #222
 );
 
+$toolbar-background: color($colors, primary);
 
 // App iOS Variables
 // --------------------------------------------------
@@ -86,3 +89,207 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+// custom
+// --------------------------------------------------
+
+ion-app.md {
+
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+  font-size: 1.8rem !important;
+  font-weight: lighter !important;
+
+}
+
+#welcome
+
+{
+  text-align: center !important;
+
+  background-color: #1fc8db !important;
+    background-image: url("../assets/imgs/fondo-teusapp-trans-01.png"), linear-gradient(141deg, #009598 0%, #1fc8db 31%, #009598 75%) !important;
+
+  color: #f4f4f4;
+  text-shadow: 1px 1px 1px #444;
+
+
+}
+
+// fondo general inicio
+
+.content-md {
+  background-color: #efefef!important;
+  background-image:url("../assets/imgs/fondo-teusapp-trans-01.png"), linear-gradient(141deg, #eeeeee 25%, #ffffff 40%, #f3ecec 55%) !important;
+}
+
+
+// fondo general fin
+
+
+
+.toolbar-md-secondary .bar-button-clear-md, .toolbar-md-secondary .bar-button-default-md, .toolbar-md-secondary .bar-button-outline-md, .toolbar-md-secondary .toolbar-title-md {
+  
+  text-align: center !important;
+}
+
+.toolbar-md-secondary .toolbar-background-md {
+  background: #3CA84F;
+  background-image: linear-gradient(141deg, #7CB520 35%, #3CA84F 70%, #7CB520 95%) !important;
+}
+
+
+/*
+  https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
+  box-shadow: [inset?] [top] [left] [blur] [size] [color];
+
+  Tips:
+    - We're setting all the blurs to 0 since we want a solid fill.
+    - Add the inset keyword so the box-shadow is on the inside of the element
+    - Animating the inset shadow on hover looks like the element is filling in from whatever side you specify ([top] and [left] accept negative values to become [bottom] and [right])
+    - Multiple shadows can be stacked
+    - If you're animating multiple shadows, be sure to keep the same number of shadows so the animation is smooth. Otherwise, you'll get something choppy.
+*/
+
+// Animate the size, inside
+
+
+// Animate the size, outside
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--hover); }
+}
+
+
+
+
+
+// Multiple shadows, one on the outside, another on the inside
+.offset {  
+  box-shadow: 
+    0.3em 0.3em 0 0 var(--color),
+    inset 0.3em 0.3em 0 0 var(--color);
+  
+  &:hover,
+  &:focus {
+    box-shadow: 
+      0 0 0 0 var(--hover),
+      inset 6em 3.5em 0 0 var(--hover);
+  }
+}
+
+//=== Set button colors
+// If you wonder why use Sass vars or CSS custom properties...
+  // Make a map with the class names and matching colors
+$colores: (
+  
+  pulse: #fff, 
+
+);
+
+// Sass variables compile to a static string; CSS variables are dynamic and inherited
+  // Loop through the map and set CSS custom properties using Sass variables
+@each $button, $color in $colores {
+  .#{$button} {
+    --color: #{$color};
+    --hover: #{adjust-hue($color, 45deg)};
+  }
+}
+
+// Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties.
+button {  
+  color: var(--color);
+  transition: 0.25s;
+  
+  &:hover,
+  &:focus { 
+    border-color: var(--hover);
+    color: #000;
+  }
+}
+
+//=== Pen styling, ignore
+
+
+// Basic button styles
+button {
+  background: #EB7C2E;
+  border-radius: 25px;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+// fin clases botones
+
+
+
+// inicio codigo tabs
+
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-text {
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px #222;
+
+}
+
+
+
+// fin codigo tabs
+
+
+ion-img {
+  
+ 
+  background:none !important;
+
+}
+
+
+
+.logo-img {
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+.logo-img:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+
+
+.button-clear-md {
+ 
+  color: #999 !important;
+ 
+}
+
+
+.item-md {
+  
+  font-size: 1.9rem !important;
+  
+}
+
+
+.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+  
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+
+
+.item-md {
+
+  background-color: transparent !important;
+ 
+}
